@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Natalie Ngan</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:700|Roboto+Slab" rel="stylesheet">
+  <link href="lib/featherlight-docs/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <style>
+  body {
+      position: relative;
+      font-family: 'Roboto Slab'; 
+  }
+
+  #profilepic img {
+    width: 100%;
+  }
+  .navbar {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  ul.nav > li > a:hover {
+    color: #fff !important; 
+    background-color: #000 !important;
+  }
+  ul.nav > li > a:active {
+    color: #fff !important; 
+    background-color: #000 !important;
+  }
+
+  .nav a {
+    font-family: 'Roboto Mono';
+  }
+  .navbar-brand {
+    font-family: 'Roboto Mono';
+    padding-left: 50px;
+  }
+
+  h1 {
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 100px;
+  }
+
+  #about {
+    padding-top:50px;
+    padding-bottom: 50px;
+    padding-left: 25%;
+    padding-right: 25%;
+    height:500px;
+    color: #000; 
+    background-color: #fff;
+    height: 100%;
+  }
+
+  #projects {
+    padding-top:40px;
+    padding-bottom: 50px;
+    padding-left: 22%;
+    padding-right: 22%;
+    color: #fff; 
+    background-color: #424242;
+    height: 100%;
+  }
+  #projects a {
+    color: #aaa;
+  }
+
+  #projects img {
+    height:200px;
+    background-color: #aaa;
+    padding: 10px;
+    margin: auto;
+  }
+
+  .project-content {
+    padding-bottom: 50px
+  }
+  
+  #resume {
+    padding-top:40px; 
+    padding-bottom: 50px;
+    color: #fff; 
+    background-color: #334055;
+    height: 100%;
+    width: 100%;
+    padding-left: 22%;
+    padding-right: 22%;
+  }
+
+  #contact {
+    padding-top:40px; 
+    padding-bottom: 100px;
+    color: #000; 
+    background-color: #fff;
+    height: 100%;
+
+  }
+
+  .contact-button{
+    text-align: center;
+    color: #b8b8b8;
+  }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar" style="color: #fff;"></span>
+          <span class="icon-bar" style="color: #fff;"></span>
+          <span class="icon-bar" style="color: #fff;"></span>                        
+      </button>
+      <a class="navbar-brand" href="#" style="color: #000;">Natalie Ngan</a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="#about" style="color: #000;">About</a></li>
+          <li><a href="#projects" style="color: #000;">Projects</a></li>
+          <li><a href="#resume" style="color: #000;">Resume</a></li>
+          <li><a href="#contact" style="color: #000;">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>    
+
+<div id="profilepic" class="container-fluid">
+  <img src="img/profile1.jpg"/>
+</div>
+<div id="about" class="container-fluid">
+  <h1>ABOUT</h1>
+  <p>My name is Natalie Ngan and I am currently in the Bachelor of Computer Science (BCS) Second Degree program at the University of British Columbia (UBC). In 2014, I graduated with a Bachelor of Arts degree, majoring in Psychology (also at UBC). After working at a telecommunications company for over 4 years and troubleshooting my clients' phones, I've realized that my passion lies in creating technology that people can enjoy without getting angry with it. :P
+  <br>
+  <br>
+  In my spare time, I like to go out for a ride on my motorcycle (a black Yamaha R6). Yes, I guess you can say I'm crazy; I love a good adventure, which is also why I'm in computer science!
+  <br>
+  <br>
+  This website showcases the personal projects I've done so far. (It's also a small demo of my web development skills!)</p>
+</div>
+
+    <div id="projects" class="container-fluid">
+      <h1>PROJECTS</h1>
+      <div class="project-content">
+        <h3>Photography Portfolio Website</h3>
+        <p>As a freelance fashion photographer, I've always wanted to create a website to showcase my photo portfolio. Before studying compsci, I used website services that provided templates ... but what's the fun in that?! After learning HTML/CSS and JavaScript, I decided I would make my own website, from scratch! 
+        <br>
+        <br>
+        <p>For this project, I used Masonry.js to create the Pinterest-style layout of images. I also used Featherlight.js to create the lightbox effect when you click on the photos. 
+        <br>
+        <br>
+        Here is the link to the website: <a href="http://www.nataliealaska.com/">www.NatalieAlaska.com </a>
+        <br>
+        <br>
+        <a href="img/photowebsite1.png" data-featherlight="image">
+          <img src="img/photowebsite1.png"/> 
+        </a>
+        <a href="img/photowebsite2.png" data-featherlight="image">
+        <img src="img/photowebsite2.png"/>
+        </a>
+        </p>
+      </div>
+
+      <div class="project-content">
+        <h3>Tic Tac Toe</h3>
+        <p>After taking a course on design patterns and Java, I decided to practise what I learned by writing a Tic Tac Toe game. The challenge was creating the computer player; I used the minimax algorithm to generate and evaluate all possible moves to find the best move for the computer opponent to play. I've also implemented 3 levels of difficulty, which is done by changing the depth of the tree of possible moves. 
+        <br>
+        <br>
+        Initially the game is played on the IDE console. Recently, I decided to turn it into an Android app. 
+        <br>
+        <br>
+        Available on Google Play: 
+        <br>
+        <br> 
+        <a href="img/tictactoe1.png" data-featherlight="image">
+          <img style="height: 250px;" src="img/tictactoe1.png"/>
+        </a>
+        <a href="img/tictactoe2.png" data-featherlight="image">
+          <img style="height: 250px;" src="img/tictactoe2.png"/>
+        </a>
+        <a href="img/tictactoe3.png" data-featherlight="image">
+          <img style="height: 250px;" src="img/tictactoe3.png"/>
+        </a>
+        <a href="img/tictactoe4.png" data-featherlight="image">
+          <img style="height: 250px;" src="img/tictactoe4.png"/>
+        </a>
+        </p>
+        </div>
+
+      <div class="project-content">
+        <h3>MSFTHacks 2017 - ReciperBot</h3>
+        <p>I had the great opportunity to participate in the MSFTHacks by Microsoft. In a team of 4, we created a messenger bot that scans the image of a grocery item (uploaded by the user) and recommends cooking recipes based on the uploaded image. 
+        <br>
+        <br> 
+        The entire project was written using Node.js. We used the Microsoft Bot Framework and Microsoft Azure to create ReciperBot and the conversation stream between the bot and user. For the image scanning, we used the Microsoft Cognitive Services Computer Vision API. We experimented with several recipe recommender API, such as Spoonacular. 
+        <br>
+        <br>
+        After the user uploads a photo, ReciperBot will ask the user for their dietary restrictions and cuisine preference. By gathering information from user input, ReciperBot recommends a few recipes. 
+        <br>
+        <br>
+        My task in this project was implementing the conversation and prompts by ReciperBot. I also wrote the code that uses Computer Vision API, and parses the JSON object from the API response to determine what grocery item was detected in the uploaded image.
+        <br>
+        <br> 
+        <a href="img/reciperbot1.png" data-featherlight="image">
+          <img style="height: 300px;" src="img/reciperbot1.png"/>
+        </a>
+        </p>
+      </div>
+
+      <div class="project-content">
+        <h3>AxiomZen Hackathon - Two Can Dine WebApp</h3>
+        <p>
+        The Two Can Dine WebApp is a project I created in a team of 4 for the AxiomZen Hackathon. The theme for this hackathon is "diversity", so we decided to create a website that promotes cultural diversity through food. The Two Can Dine WebApp is designed for people to connect with each other and swap homemade meals. For this project, we used HTML/CSS, JavaScript, and the Bootstrap Framework. 
+        <br>
+        <br>
+        <a href="img/twocandine1.png" data-featherlight="image">
+          <img style="height: 400px;" src="img/twocandine1.png"/>
+        </a>
+        <br>
+        <br>
+        My task for this project was creating the "Meal Form", where users can fill out details about the meal they cooked. I was also created the page for users to browse meals that other users have posted. 
+        <br>
+        <br>
+        <a href="img/twocandine2.png" data-featherlight="image">
+          <img style="height: 400px;" src="img/twocandine2.png"/>
+        </a>
+        <br>
+        <br>
+        <a href="img/twocandine3.png" data-featherlight="image">
+          <img style="height: 400px;" src="img/twocandine3.png"/>
+        </a>
+        </p>
+      </div>
+
+      <div id="project-content">
+        <h3>Amazon Open Data Hackathon - New Westminster Helping Hub</h3>
+        <p>
+        This project is from my first ever Hackathon. The prompt for this hackathon was to create a project using open data provided by the City of New Westminster. My partner and I wanted to solve a problem that the city had experienced not too long ago: traffic congestion during severe weather conditions. 
+        <br>
+        <br>
+        The Community Helping Hub allows residents of the city to exchange help during severe weather conditions (such as windstorms). Users of the Helping Hub can create postings when they need help, and respond to postings when they are available to help others. The Helping Hub also features a map for users to flag road conditions and an alert bar for the city to keep the residents up-to-date.
+        <br>
+        <br>
+        Best of all, <strong>We won third place in the hackathon! :)</strong>
+        <br>
+        <br>
+        <a href="img/helpinghub1.png" data-featherlight="image">
+          <img style="height: 400px;" src="img/helpinghub1.png"/>
+        </a>
+        </p>
+      </div>
+    </div>
+
+    <div id="resume">
+      <div class="row">
+        <h1>RESUME</h1>
+        <div class="container-fluid">
+          <div class="row" style="margin:auto;">
+            <div class="pdf" style="margin:auto;">
+              <embed src="files/nataliengan-resume.pdf" width="100%" height="900px" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div id="contact" class="container-fluid">
+    <div class="row">
+    <div class="col-xs-12">
+      <h1>CONTACT</h1>
+      <div class="row">
+        <div class="col-xs-4">
+          <div class="contact-button">
+            <a class="btn btn-social-icon btn-google">
+              <span class="fa fa-google fa-5x"></span>
+              <br><br>natalie_ngan_hy@gmail.com
+            </a>
+            </div>
+        </div>
+
+        <div class="col-xs-4">
+          <div class="contact-button">
+            <a href="https://github.com/nataliengan/" class="btn btn-social-icon btn-github">
+              <span class="fa fa-github fa-5x"></span>
+              <br><br>www.github.com/nataliengan
+            </a>
+          </div>
+        </div>
+        
+        <div class="col-xs-4">
+          <div class="contact-button">
+            <a href="http://www.linkedin.com/in/natalie-ngan/" class="btn btn-social-icon btn-linkedin">
+              <span class="fa fa-linkedin fa-5x"></span>
+              <br><br>www.linkedin.com/in/natalie-ngan
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+
+
+  <script src="lib/featherlight-docs/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+$(document).ready(function(){
+  $('body').scrollspy({target: ".navbar", offset: 50});   
+
+  $("#myNavbar a").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        window.location.hash = hash;
+      });
+    }
+  });
+});
+</script>
+
+
+
+</body>
+</html>
