@@ -141,11 +141,21 @@
   <div id="about" class="container-fluid">
     <h1>ABOUT</h1>
     <p>
-      My name is Natalie and I am currently a student in the Bachelor of Computer Science (BCS) Second Degree program at the University of British Columbia. In 2014, I graduated with a Bachelor of Arts degree in Psychology and Family Studies. After having worked for 4 years at a telecommunications company as a wireless sales associate and getting hands-on experience with the latest tech, I realized that my passion lies in creating technology that people can enjoy without frustration. So now I'm setting on a journey to combine my background in psychology and new interest in computer science to bring user-friendly technologies into the world.
+      My name is Natalie and I am currently a student in the Bachelor of Computer Science (BCS) Second Degree
+      program at the University of British Columbia. In 2014, I graduated with a Bachelor of Arts degree in 
+      Psychology and Family Studies. After having worked for 4 years at a telecommunications company as a wireless
+      sales associate and getting hands-on experience with the latest tech, I realized that my passion lies in 
+      creating technology that people can enjoy without frustration. So now I'm setting on a journey to combine my 
+      background in psychology and new interest in computer science to bring user-friendly technologies into the 
+      world.
       <br /><br />
-      Outside of coding, I'm a fashion photographer and an avid motorcycle rider (I own a black Yamaha R6). Some say I'm crazy for riding a motorcycle, but I love a good adventure, which is why I've decided to join the tech industry!
+      Outside of coding, I'm a fashion photographer and an avid motorcycle rider (I own a black Yamaha R6). Some say 
+      I'm crazy for riding a motorcycle, but I love a good adventure, which is why I've decided to join the tech 
+      industry!
       <br /><br />
-      This website showcases my thoughts and reflections on some of the personal projects I've created out of pure curiosity as I explored the mysterious world of software development and computer science. </p>
+      This website showcases my thoughts and reflections on some of the personal projects I've created out of pure
+      curiosity as I explored the mysterious world of software development and computer science. 
+    </p>
   </div>
 
   <div id="projects" class="container-fluid">
@@ -155,13 +165,32 @@
         <h3>RentMe</h3>
         <h4><a href="https://github.com/nataliengan/rentme">RentMe on GitHub</a></h4>
         <p>
-          With a looming housing crisis in Vancouver, I created RentMe with the goal of providing more insight into the housing rental prices in the different regions across the lower mainland. RentMe allows users to provide a housing property address in Vancouver to find the average rental price for that property.
+          With a looming housing crisis in Vancouver, I created RentMe with the goal of providing more insight into 
+          the housing rental prices in the different regions across the lower mainland. RentMe allows users to 
+          provide a housing property address in Vancouver to find the average rental price for that property.
 
-          The project is a work in progress, consisting of front- and back-end applications to power the service. The back-end is an API service, written in Python using Flask, that takes in HTTP requests with the address and other optional housing information (such as sqft, number of bedrooms, number of bathrooms), provides other analysis on the address (i.e., distance from nearest transit stop), and returns the average monthly rental price for that address. The price predictor is a linear regression model trained using the Python Scikit-learn library. To procure the data used to train the model, I implemented a web crawler using Scrapy to parse from Vancouver rental listings/ads and convert the data into quantifiable information in CSV format. 
+          The project is a work in progress, consisting of front- and back-end applications to power the service. 
+          The back-end is an API service, written in Python using Flask, that takes in HTTP requests with the 
+          address and other optional housing information (such as sqft, number of bedrooms, number of bathrooms), 
+          provides other analysis on the address (i.e., distance from nearest transit stop), and returns the average 
+          monthly rental price for that address. The price predictor is a linear regression model trained using the 
+          Python Scikit-learn library. To procure the data used to train the model, I implemented a web crawler 
+          using Scrapy to parse from Vancouver rental listings/ads and convert the data into quantifiable 
+          information in CSV format. 
 
-          A lot of work went into designing processing the features of the model and data preprocessing to create an accurate price predictor. I developed a pipeline that processes the raw data, which is usually qualitative and descriptive, into a quantitative value that can be used to train the model. For example, descriptions of washer/dryer in housing unit is translated to 3 points, whereas no washers/dryer in unit is translated to 1 point. The biggest challenge in data preprocessing was figuring out how to convert the rental listing's address (or approximate lat/lon if exact address was not available) into a quantitative feature. To overcome the challenge, I implemented a pipeline system for the web crawler which, upon parsing, distributes rental listings into different CSV files for different regions of Vancouver based on the address's postal code (using Google's Geocoding API to convert lat/lon to address where needed) and create a linear regression model for each region.
+          A lot of work went into designing processing the features of the model and data preprocessing to create an 
+          accurate price predictor. I developed a pipeline that processes the raw data, which is usually qualitative 
+          and descriptive, into a quantitative value that can be used to train the model. For example, descriptions 
+          of washer/dryer in housing unit is translated to 3 points, whereas no washers/dryer in unit is translated 
+          to 1 point. The biggest challenge in data preprocessing was figuring out how to convert the rental 
+          listing's address (or approximate lat/lon if exact address was not available) into a quantitative feature. 
+          To overcome the challenge, I implemented a pipeline system for the web crawler which, upon parsing, 
+          distributes rental listings into different CSV files for different regions of Vancouver based on the 
+          address's postal code (using Google's Geocoding API to convert lat/lon to address where needed) and create 
+          a linear regression model for each region.
 
-          I'm currently designing the front-end application for RentMe, which will include data visualization. Check out my GitHub for updates!
+          I'm currently designing the front-end application for RentMe, which will include data visualization. Check 
+          out my GitHub for updates!
         </p>
       </div>
 
@@ -169,11 +198,19 @@
         <h3>Quicklist</h3>
         <h4><a href="https://www.npmjs.com/package/quicklist">Quicklist on NPM</a></h4>
         <p>
-          Quicklist is a JavaScript library that provides an Java-like arraylist implementation with amortized O(1) shift and unshift. Quicklist provides users with more control over when to expand/shrink the size of array by providing an adjustable resize threshold. 
+          Quicklist is a JavaScript library that provides an Java-like arraylist implementation with amortized O(1) 
+          shift and unshift. Quicklist provides users with more control over when to expand/shrink the size of array 
+          by providing an adjustable resize threshold. 
 
-          The inspiration for Quicklist comes from doing Leetcode challenges, where figuring out the optimal solution is key. I found it quite silly that adding/removing from the front of an array requires O(n) time just because of the need to shift each subsequent element, so I created a solution that doesn't require all that shuffling around... at least most of the time.
+          The inspiration for Quicklist comes from doing Leetcode challenges, where figuring out the optimal 
+          solution is key. I found it quite silly that adding/removing from the front of an array requires O(n) time 
+          just because of the need to shift each subsequent element, so I created a solution that doesn't require 
+          all that shuffling around... at least most of the time.
 
-          The experience of implementing Quicklist was fun and educational. I learned the nitty-gritty of how to keep tabs on array elements, as well as implementing my own version of foreach, map, reduce functions. As simple as arrays seem, it was extremely enlightening to realize how much goes on underneath in its implementation!
+          The experience of implementing Quicklist was fun and educational. I learned the nitty-gritty of how to 
+          keep tabs on array elements, as well as implementing my own version of foreach, map, reduce functions. As 
+          simple as arrays seem, it was extremely enlightening to realize how much goes on underneath in its 
+          implementation!
         </p>
       </div>
 
@@ -184,9 +221,16 @@
           Aside from software development, photography is my greatest passion; what better way to combine
           my two loves than to create a website that showcases both?
           <br /><br />
-          During my internship at SAP Vancouver, I first heard and learned about the React-Redux architecture. Wanting to get hands-on experience outside of work, I decided to convert my exising photography portfolio site to use React-Redux and ES6. To incorporate responsive design, I created a custom navigation bar component that monitors the state of the browser's width and converts into a hamburger menu for smaller device, as well as a Pinterest-style gallery that reflows into single lane of images for narrow screen sizes. Using Redux, I created a lightbox component that updates the interface when the user selects/deselects an image.
+          During my internship at SAP Vancouver, I first heard and learned about the React-Redux architecture. 
+          Wanting to get hands-on experience outside of work, I decided to convert my exising photography portfolio 
+          site to use React-Redux and ES6. To incorporate responsive design, I created a custom navigation bar 
+          component that monitors the state of the browser's width and converts into a hamburger menu for smaller 
+          device, as well as a Pinterest-style gallery that reflows into single lane of images for narrow screen 
+          sizes. Using Redux, I created a lightbox component that updates the interface when the user selects/
+          deselects an image.
           <br /><br />
-          Through this project, I learned about webpack and code-splitting techniques such as asset caching and chunking to optimize webpage load time.
+          Through this project, I learned about webpack and code-splitting techniques such as asset caching and 
+          chunking to optimize webpage load time.
           <br /><br />
           <a href="./img/nataliealaska1.jpg" data-featherlight="image">
             <img class="img-responsive" src="./img/nataliealaska1.jpg"/>
@@ -209,9 +253,15 @@
       <div class="project-content">
         <h3>Tic Tac Toe</h3>
         <p>
-          After having completed my first semester in BCS, I wanted gain more experience with using Java by creating a Tic Tac Toe game. The biggest challenge of this project was implementing the logic behind the computer player, where I used the minimax algorithm to generate and evaluate all possible game moves to find the best course of action for the computer opponent. I've also implemented 3 levels of difficulty, which is done by changing the search depth of the tree.
+          After having completed my first semester in BCS, I wanted gain more experience with using Java by creating 
+          a Tic Tac Toe game. The biggest challenge of this project was implementing the logic behind the computer 
+          player, where I used the minimax algorithm to generate and evaluate all possible game moves to find the 
+          best course of action for the computer opponent. I've also implemented 3 levels of difficulty, which is 
+          done by changing the search depth of the tree.
           <br /><br />
-          Initially the game was developed with minimal UI to play on the command line. I later developed an interest in learning Android development, so I convert the game into an Android app with a simple and colourful graphical components to enhance the game experience using Android studio.
+          Initially the game was developed with minimal UI to play on the command line. I later developed an 
+          interest in learning Android development, so I convert the game into an Android app with a simple and 
+          colourful graphical components to enhance the game experience using Android studio.
           <br /><br />
           Available on Google Play: <a href="https://goo.gl/aUFdhP"> https://goo.gl/aUFdhP </a>
           <br /><br />
@@ -233,13 +283,23 @@
       <div class="project-content">
         <h3>MSFTHacks 2017 - ReciperBot</h3>
         <p>
-          I'm thankful to have had the opportunity to participate in the MSFTHacks by Microsoft, which took place at UBC. In a small team of 4, we developed a Facebook messenger chatbot that recommends cooking recipes based on user-uploaded images of grocery items. The purpose of the project is to encourage young professionals to cook at home to help minimize spending on restaurants and takeouts.
+          I'm thankful to have had the opportunity to participate in the MSFTHacks by Microsoft, which took place at 
+          UBC. In a small team of 4, we developed a Facebook messenger chatbot that recommends cooking recipes based 
+          on user-uploaded images of grocery items. The purpose of the project is to encourage young professionals 
+          to cook at home to help minimize spending on restaurants and takeouts.
           <br /><br />
-          The entire project was written using Node.js, and services Microsoft Bot Framework and Microsoft Azure to develop the conversation stream between the bot and user. For image recognition, we used the Microsoft Cognitive Services Computer Vision API. We also experimented with several recipe APIs, such as Spoonacular, to deliver recipes for our users.
+          The entire project was written using Node.js, and services Microsoft Bot Framework and Microsoft Azure to 
+          develop the conversation stream between the bot and user. For image recognition, we used the Microsoft 
+          Cognitive Services Computer Vision API. We also experimented with several recipe APIs, such as 
+          Spoonacular, to deliver recipes for our users.
           <br /><br />
-          Once the user uploads a photo, ReciperBot confirms with the user on the item in the photo by providing the name of the item. After gathering more information from the user about their dietary preferences (e.g., food allergies), ReciperBot presents a few recipes that uses the food item in the chat.
+          Once the user uploads a photo, ReciperBot confirms with the user on the item in the photo by providing the 
+          name of the item. After gathering more information from the user about their dietary preferences (e.g., 
+          food allergies), ReciperBot presents a few recipes that uses the food item in the chat.
           <br /><br />
-          My task in this project involved implementing the conversation stream and prompts by ReciperBot. I also wrote the code that uses Computer Vision API and parses the resulting JSON object from the API response to determine what grocery item was detected in the uploaded image.
+          My task in this project involved implementing the conversation stream and prompts by ReciperBot. I also 
+          wrote the code that uses Computer Vision API and parses the resulting JSON object from the API response to 
+          determine what grocery item was detected in the uploaded image.
           <br /><br />
           <a href="img/reciperbot1.png" data-featherlight="image">
             <img class="img-responsive" style="height:300px; width: auto;" src="img/reciperbot1.png"/>
@@ -250,13 +310,16 @@
       <div class="project-content">
         <h3>AxiomZen Hackathon - Two Can Dine WebApp</h3>
         <p>
-          The theme for this hackathon was Diversity, so in a team of 4, we created a web app that promotes cultural diversity through food. The Two Can Dine WebApp is designed for people to connect with each other to swap homemade meals. For this project, we used HTML, CSS, JavaScript, and the Bootstrap Framework.
+          The theme for this hackathon was Diversity, so in a team of 4, we created a web app that promotes cultural 
+          diversity through food. The Two Can Dine WebApp is designed for people to connect with each other to swap 
+          homemade meals. For this project, we used HTML, CSS, JavaScript, and the Bootstrap Framework.
           <br /><br />
           <a href="img/twocandine1.png" data-featherlight="image">
             <img class="img-responsive"  src="img/twocandine1.png"/>
           </a>
           <br /><br />
-          My task for this project involved creating the "Meal Form", where users can fill out the details about the meal they cooked. I also developed the page where users can browse for meals posted by other users.
+          My task for this project involved creating the "Meal Form", where users can fill out the details about the 
+          meal they cooked. I also developed the page where users can browse for meals posted by other users.
           <br /><br />
           <a href="img/twocandine2.png" data-featherlight="image">
             <img  class="img-responsive" src="img/twocandine2.png"/>
@@ -271,9 +334,17 @@
       <div id="project-content">
         <h3>Amazon Open Data Hackathon - New Westminster Helping Hub</h3>
         <p>
-          This project came from my first Hackathon. The prompt for the hackathon was to create a project using open data provided by the City of New Westminster. My project partner and I (a tiny team of 2!) wanted to solve a problem that the city had experienced recently in 2015: traffic congestions during severe weather conditions. We used the city's open data on neighbourhood zones, bus routes, and traffic volume to map the potentially high traffic routes and see how traffic may be affected when disasters strike.
+          This project came from my first Hackathon. The prompt for the hackathon was to create a project using open 
+          data provided by the City of New Westminster. My project partner and I (a tiny team of 2!) wanted to solve 
+          a problem that the city had experienced recently in 2015: traffic congestions during severe weather 
+          conditions. We used the city's open data on neighbourhood zones, bus routes, and traffic volume to map the 
+          potentially high traffic routes and see how traffic may be affected when disasters strike.
           <br /><br />
-          The Community Helping Hub allows residents to exchange help during severe weather conditions and emergencies. With a little design inspiration from AirBnb, we created a linked map-and-list UI using JavaScript, HTML, CSS and Bootstrap: when users click on a "help-wanted" posting, the map updates with a flag to show the location of the posting. The map also updates with a warning flag to indicate traffic blockage reported by users.
+          The Community Helping Hub allows residents to exchange help during severe weather conditions and 
+          emergencies. With a little design inspiration from AirBnb, we created a linked map-and-list UI using 
+          JavaScript, HTML, CSS and Bootstrap: when users click on a "help-wanted" posting, the map updates with a 
+          flag to show the location of the posting. The map also updates with a warning flag to indicate traffic 
+          blockage reported by users.
           <br /><br />
           Best of all, <strong>We won third place in the hackathon! :)</strong>
           <br /><br />
