@@ -111,255 +111,219 @@
 </head>
 
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#" style="color: #000;">Natalie Ngan</a>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#" style="color: #000;">Natalie Ngan</a>
+      </div>
+      <div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#resume">Resumé</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#resume">Resumé</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+  </nav>
+
+  <div id="profilepic" class="container-fluid">
+    <img src="img/profile1.jpg"/>
+  </div>
+
+  <div id="about" class="container-fluid">
+    <h1>ABOUT</h1>
+    <p>
+      My name is Natalie and I am currently a student in the Bachelor of Computer Science (BCS) Second Degree program at the University of British Columbia. In 2014, I graduated with a Bachelor of Arts degree in Psychology and Family Studies. After having worked for 4 years at a telecommunications company as a wireless sales associate and getting hands-on experience with the latest tech, I realized that my passion lies in creating technology that people can enjoy without frustration. So now I'm setting on a journey to combine my background in psychology and new interest in computer science to bring user-friendly technologies into the world.
+      <br /><br />
+      Outside of coding, I'm a fashion photographer and an avid motorcycle rider (I own a black Yamaha R6). Some say I'm crazy for riding a motorcycle, but I love a good adventure, which is why I've decided to join the tech industry!
+      <br /><br />
+      This website showcases my thoughts and reflections on some of the personal projects I've created out of pure curiosity as I explored the mysterious world of software development and computer science. </p>
+  </div>
+
+  <div id="projects" class="container-fluid">
+    <div class="row">
+      <h1>PROJECTS</h1>
+      <div class="project-content">
+        <h3>RentMe</h3>
+        <h4><a href="https://github.com/nataliengan/rentme">RentMe on GitHub</a></h4>
+        <p>
+          With a looming housing crisis in Vancouver, I created RentMe with the goal of providing more insight into the housing rental prices in the different regions across the lower mainland. RentMe allows users to provide a housing property address in Vancouver to find the average rental price for that property.
+
+          The project is a work in progress, consisting of front- and back-end applications to power the service. The back-end is an API service, written in Python using Flask, that takes in HTTP requests with the address and other optional housing information (such as sqft, number of bedrooms, number of bathrooms), provides other analysis on the address (i.e., distance from nearest transit stop), and returns the average monthly rental price for that address. The price predictor is a linear regression model trained using the Python Scikit-learn library. To procure the data used to train the model, I implemented a web crawler using Scrapy to parse from Vancouver rental listings/ads and convert the data into quantifiable information in CSV format. 
+
+          A lot of work went into designing processing the features of the model and data preprocessing to create an accurate price predictor. I developed a pipeline that processes the raw data, which is usually qualitative and descriptive, into a quantitative value that can be used to train the model. For example, descriptions of washer/dryer in housing unit is translated to 3 points, whereas no washers/dryer in unit is translated to 1 point. The biggest challenge in data preprocessing was figuring out how to convert the rental listing's address (or approximate lat/lon if exact address was not available) into a quantitative feature. To overcome the challenge, I implemented a pipeline system for the web crawler which, upon parsing, distributes rental listings into different CSV files for different regions of Vancouver based on the address's postal code (using Google's Geocoding API to convert lat/lon to address where needed) and create a linear regression model for each region.
+
+          I'm currently designing the front-end application for RentMe, which will include data visualization. Check out my GitHub for updates!
+        </p>
+      </div>
+
+      <div class="project-content">
+        <h3>Quicklist</h3>
+        <h4><a href="https://www.npmjs.com/package/quicklist">Quicklist on NPM</a></h4>
+        <p>
+          Quicklist is a JavaScript library that provides an Java-like arraylist implementation with amortized O(1) shift and unshift. Quicklist provides users with more control over when to expand/shrink the size of array by providing an adjustable resize threshold. 
+
+          The inspiration for Quicklist comes from doing Leetcode challenges, where figuring out the optimal solution is key. I found it quite silly that adding/removing from the front of an array requires O(n) time just because of the need to shift each subsequent element, so I created a solution that doesn't require all that shuffling around... at least most of the time.
+
+          The experience of implementing Quicklist was fun and educational. I learned the nitty-gritty of how to keep tabs on array elements, as well as implementing my own version of foreach, map, reduce functions. As simple as arrays seem, it was extremely enlightening to realize how much goes on underneath in its implementation!
+        </p>
+      </div>
+
+      <div class="project-content">
+        <h3>Photography Portfolio Website</h3>
+        <h4><a href="www.nataliealaska.com">www.NatalieAlaska.com</a></h4>
+        <p>
+          Aside from software development, photography is my greatest passion; what better way to combine
+          my two loves than to create a website that showcases both?
+          <br /><br />
+          During my internship at SAP Vancouver, I first heard and learned about the React-Redux architecture. Wanting to get hands-on experience outside of work, I decided to convert my exising photography portfolio site to use React-Redux and ES6. To incorporate responsive design, I created a custom navigation bar component that monitors the state of the browser's width and converts into a hamburger menu for smaller device, as well as a Pinterest-style gallery that reflows into single lane of images for narrow screen sizes. Using Redux, I created a lightbox component that updates the interface when the user selects/deselects an image.
+          <br /><br />
+          Through this project, I learned about webpack and code-splitting techniques such as asset caching and chunking to optimize webpage load time.
+          <br /><br />
+          <a href="./img/nataliealaska1.jpg" data-featherlight="image">
+            <img class="img-responsive" src="./img/nataliealaska1.jpg"/>
+          </a>
+          <a href="./img/nataliealaska2.jpg" data-featherlight="image">
+            <img class="img-responsive" src="./img/nataliealaska2.jpg"/>
+          </a>
+          <a href="./img/nataliealaska3.jpg" data-featherlight="image">
+            <img class="img-responsive" src="./img/nataliealaska3.jpg"/>
+          </a>
+          <a href="./img/nataliealaska4.jpg" data-featherlight="image">
+            <img class="img-responsive" style="height:300px; width: auto;" src="./img/nataliealaska4.jpg"/>
+          </a>
+          <a href="./img/nataliealaska5.jpg" data-featherlight="image">
+            <img class="img-responsive" style="height:300px; width: auto;" src="./img/nataliealaska5.jpg"/>
+          </a>
+        </p>
+      </div>
+
+      <div class="project-content">
+        <h3>Tic Tac Toe</h3>
+        <p>
+          After having completed my first semester in BCS, I wanted gain more experience with using Java by creating a Tic Tac Toe game. The biggest challenge of this project was implementing the logic behind the computer player, where I used the minimax algorithm to generate and evaluate all possible game moves to find the best course of action for the computer opponent. I've also implemented 3 levels of difficulty, which is done by changing the search depth of the tree.
+          <br /><br />
+          Initially the game was developed with minimal UI to play on the command line. I later developed an interest in learning Android development, so I convert the game into an Android app with a simple and colourful graphical components to enhance the game experience using Android studio.
+          <br /><br />
+          Available on Google Play: <a href="https://goo.gl/aUFdhP"> https://goo.gl/aUFdhP </a>
+          <br /><br />
+          <a href="img/tictactoe1.png" data-featherlight="image">
+            <img class="img-responsive" style="height:300px; width: auto;" src="img/tictactoe1.png"/>
+          </a>
+          <a href="img/tictactoe2.png" data-featherlight="image">
+            <img  class="img-responsive" style="height:300px; width: auto;" src="img/tictactoe2.png"/>
+          </a>
+          <a href="img/tictactoe3.png" data-featherlight="image">
+            <img class="img-responsive" style="height:300px; width: auto;" src="img/tictactoe3.png"/>
+          </a>
+          <a href="img/tictactoe4.png" data-featherlight="image">
+            <img class="img-responsive" style="height:300px; width: auto;" src="img/tictactoe4.png"/>
+          </a>
+        </p>
+      </div>
+
+      <div class="project-content">
+        <h3>MSFTHacks 2017 - ReciperBot</h3>
+        <p>
+          I'm thankful to have had the opportunity to participate in the MSFTHacks by Microsoft, which took place at UBC. In a small team of 4, we developed a Facebook messenger chatbot that recommends cooking recipes based on user-uploaded images of grocery items. The purpose of the project is to encourage young professionals to cook at home to help minimize spending on restaurants and takeouts.
+          <br /><br />
+          The entire project was written using Node.js, and services Microsoft Bot Framework and Microsoft Azure to develop the conversation stream between the bot and user. For image recognition, we used the Microsoft Cognitive Services Computer Vision API. We also experimented with several recipe APIs, such as Spoonacular, to deliver recipes for our users.
+          <br /><br />
+          Once the user uploads a photo, ReciperBot confirms with the user on the item in the photo by providing the name of the item. After gathering more information from the user about their dietary preferences (e.g., food allergies), ReciperBot presents a few recipes that uses the food item in the chat.
+          <br /><br />
+          My task in this project involved implementing the conversation stream and prompts by ReciperBot. I also wrote the code that uses Computer Vision API and parses the resulting JSON object from the API response to determine what grocery item was detected in the uploaded image.
+          <br /><br />
+          <a href="img/reciperbot1.png" data-featherlight="image">
+            <img class="img-responsive" style="height:300px; width: auto;" src="img/reciperbot1.png"/>
+          </a>
+        </p>
+      </div>
+
+      <div class="project-content">
+        <h3>AxiomZen Hackathon - Two Can Dine WebApp</h3>
+        <p>
+          The theme for this hackathon was Diversity, so in a team of 4, we created a web app that promotes cultural diversity through food. The Two Can Dine WebApp is designed for people to connect with each other to swap homemade meals. For this project, we used HTML, CSS, JavaScript, and the Bootstrap Framework.
+          <br /><br />
+          <a href="img/twocandine1.png" data-featherlight="image">
+            <img class="img-responsive"  src="img/twocandine1.png"/>
+          </a>
+          <br /><br />
+          My task for this project involved creating the "Meal Form", where users can fill out the details about the meal they cooked. I also developed the page where users can browse for meals posted by other users.
+          <br /><br />
+          <a href="img/twocandine2.png" data-featherlight="image">
+            <img  class="img-responsive" src="img/twocandine2.png"/>
+          </a>
+          <br /><br />
+          <a href="img/twocandine3.png" data-featherlight="image">
+            <img  class="img-responsive" src="img/twocandine3.png"/>
+          </a>
+        </p>
+      </div>
+
+      <div id="project-content">
+        <h3>Amazon Open Data Hackathon - New Westminster Helping Hub</h3>
+        <p>
+          This project came from my first Hackathon. The prompt for the hackathon was to create a project using open data provided by the City of New Westminster. My project partner and I (a tiny team of 2!) wanted to solve a problem that the city had experienced recently in 2015: traffic congestions during severe weather conditions. We used the city's open data on neighbourhood zones, bus routes, and traffic volume to map the potentially high traffic routes and see how traffic may be affected when disasters strike.
+          <br /><br />
+          The Community Helping Hub allows residents to exchange help during severe weather conditions and emergencies. With a little design inspiration from AirBnb, we created a linked map-and-list UI using JavaScript, HTML, CSS and Bootstrap: when users click on a "help-wanted" posting, the map updates with a flag to show the location of the posting. The map also updates with a warning flag to indicate traffic blockage reported by users.
+          <br /><br />
+          Best of all, <strong>We won third place in the hackathon! :)</strong>
+          <br /><br />
+          <a href="img/helpinghub1.png" data-featherlight="image">
+            <img  class="img-responsive" src="img/helpinghub1.png"/>
+          </a>
+        </p>
       </div>
     </div>
   </div>
-</nav>
 
-<div id="profilepic" class="container-fluid">
-  <img src="img/profile1.jpg"/>
-</div>
-<div id="about" class="container-fluid">
-  <h1>ABOUT</h1>
-  <p>My name is Natalie Ngan and I am currently in the Bachelor of Computer Science (BCS)
-    Second Degree program at the University of British Columbia (UBC). In 2014, I graduated
-    with a Bachelor of Arts degree, majoring in Psychology (also at UBC). After working at a
-    telecommunications company for 4 years and troubleshooting my clients' phones,
-    I've realized that my passion lies in creating technology that people can enjoy without
-    frustration. So now I'm setting out to merge my background in psychology with computer
-    science to bring user-friendly technologies into the world.
-  <br /><br />
-  Outside of coding, I'm a fashion photographer and a motorcycle rider (I own a black Yamaha R6).
-  Some say I'm crazy for riding a motorcycle, but I love a good adventure, which is why I've decided
-  to join comp sci!
-  <br /><br />
-  This website showcases the personal projects I've done out of pure curiosity as I explored the
-  mysterious world of coding. </p>
-</div>
-
-    <div id="projects" class="container-fluid">
-      <div class="row">
-        <h1>PROJECTS</h1>
-        <div class="project-content">
-          <h3>Photography Portfolio Website</h3>
-          <h3><a href="www.nataliealaska.com">www.NatalieAlaska.com</a></h3>
-          <p>
-            Aside from coding, photography is my greatest passion; what better way to combine
-            my two loves than to create a website that showcases both?
-            <br /><br />
-            During my internship at SAP Vancouver, I learned about the
-            React-Redux architecture. Wanting to get hands-on experience with it, I decided to
-            convert my exising website to React-Redux, using ES6. To incorporate responsive design, I created
-            a custom navbar component that tracks the state of the browser's width and converts to a custom
-            hamburger menu for smaller device, as well as a Pinterest-style
-            gallery that reflows into single lane of images. Using Redux,
-            I created a lightbox component that updates when user selects/deselects an image.
-            <br /><br />
-            Through this project, I learned about webpack and code-splitting techniques such as asset
-            caching and chunking to optimize load time.
-            <br /><br />
-            <a href="./img/nataliealaska1.jpg" data-featherlight="image">
-              <img class="img-responsive" src="./img/nataliealaska1.jpg"/>
-            </a>
-            <a href="./img/nataliealaska2.jpg" data-featherlight="image">
-              <img class="img-responsive" src="./img/nataliealaska2.jpg"/>
-            </a>
-            <a href="./img/nataliealaska3.jpg" data-featherlight="image">
-              <img class="img-responsive" src="./img/nataliealaska3.jpg"/>
-            </a>
-            <a href="./img/nataliealaska4.jpg" data-featherlight="image">
-              <img class="img-responsive" style="height:300px; width: auto;" src="./img/nataliealaska4.jpg"/>
-            </a>
-            <a href="./img/nataliealaska5.jpg" data-featherlight="image">
-              <img class="img-responsive" style="height:300px; width: auto;" src="./img/nataliealaska5.jpg"/>
-            </a>
-          </p>
-        </div>
-
-        <div class="project-content">
-          <h3>Tic Tac Toe</h3>
-          <p>
-            After taking a course on design patterns and Java, I wanted to further practice by creating
-            a Tic Tac Toe game. The biggest challenge of this project was implementing the logic behind the
-            computer player: I used the minimax algorithm to generate and evaluate all possible game
-            moves to find the best course of action for the computer opponent. I've also implemented 3
-            levels of difficulty, which is done by changing the search depth of the tree.
-            <br /><br />
-            Initially the game was developed for the console. I became interested in
-            learning Android development, so I convert the game to an Android app with a
-            simple and colourful UI to enhance the game experience using Android studio.
-            <br /><br />
-            Available on Google Play: <a href="https://goo.gl/aUFdhP"> https://goo.gl/aUFdhP </a>
-            <br /><br />
-            <a href="img/tictactoe1.png" data-featherlight="image">
-              <img class="img-responsive" style="height:300px; width: auto;" src="img/tictactoe1.png"/>
-            </a>
-            <a href="img/tictactoe2.png" data-featherlight="image">
-              <img  class="img-responsive" style="height:300px; width: auto;" src="img/tictactoe2.png"/>
-            </a>
-            <a href="img/tictactoe3.png" data-featherlight="image">
-              <img class="img-responsive" style="height:300px; width: auto;" src="img/tictactoe3.png"/>
-            </a>
-            <a href="img/tictactoe4.png" data-featherlight="image">
-              <img class="img-responsive" style="height:300px; width: auto;" src="img/tictactoe4.png"/>
-            </a>
-          </p>
-        </div>
-
-        <div class="project-content">
-          <h3>MSFTHacks 2017 - ReciperBot</h3>
-          <p>
-            I had the great opportunity to participate in the MSFTHacks by Microsoft this year.
-            In a team of 4, we created a Facebook messenger chatbot that recommends cooking recipes
-            based on user-uploaded image of grocery items.
-            <br /><br />
-            The entire project was written using Node.js. We used the Microsoft Bot Framework
-            and Microsoft Azure to develop the conversation stream between the bot and user.
-            For image reading, we used the Microsoft Cognitive Services Computer Vision API.
-            We also experimented with several recipe APIs, such as Spoonacular.
-            <br /><br />
-            Once the user uploads a photo, ReciperBot confirms the item in the photo. After
-            gathering other information from the user (such as dietary restrictions), ReciperBot
-            then recommends a few recipes.
-            <br /><br />
-            My task in this project involved implementing the conversation stream and prompts by
-            ReciperBot. I also wrote the code that uses Computer Vision API and parses the
-            resulting JSON object from the API response to determine what grocery item was
-            detected in the uploaded image.
-            <br /><br />
-            <a href="img/reciperbot1.png" data-featherlight="image">
-              <img class="img-responsive" style="height:300px; width: auto;" src="img/reciperbot1.png"/>
-            </a>
-          </p>
-        </div>
-
-        <div class="project-content">
-          <h3>AxiomZen Hackathon - Two Can Dine WebApp</h3>
-            <p>
-            The theme for this hackathon is "diversity", so in a team of 4, we created a webapp
-            that promotes cultural diversity through food. The Two Can Dine WebApp is designed for
-            people to connect with each other to swap homemade meals. For this project, we used HTML,
-            CSS, JavaScript, and the Bootstrap Framework.
-            <br /><br />
-            <a href="img/twocandine1.png" data-featherlight="image">
-              <img class="img-responsive"  src="img/twocandine1.png"/>
-            </a>
-            <br /><br />
-            My task for this project involved creating the "Meal Form", where users can fill out
-            the details about the meal they cooked. I also developed the page where users can browse
-            for meals posted by other users.
-            <br /><br />
-            <a href="img/twocandine2.png" data-featherlight="image">
-              <img  class="img-responsive" src="img/twocandine2.png"/>
-            </a>
-            <br /><br />
-            <a href="img/twocandine3.png" data-featherlight="image">
-              <img  class="img-responsive" src="img/twocandine3.png"/>
-            </a>
-          </p>
-        </div>
-
-        <div id="project-content">
-          <h3>Amazon Open Data Hackathon - New Westminster Helping Hub</h3>
-          <p>
-            This project came from my first Hackathon. The prompt for the hackathon was to
-            create a project using open data provided by the City of New Westminster. My project partner
-            and I wanted to solve a problem that the city had experienced not too long ago: traffic
-            congestion during severe weather conditions. We used the city's open data on neighbourhood zones,
-            bus routes, and traffic volume to map the potentially high traffic routes and see how traffic will be affected
-            when disasters strike.
-            <br /><br />
-            The Community Helping Hub allows residents of the city to exchange help during severe
-            weather conditions and emergencies. With a little design inspiration from AirBnb, we created a linked
-            map-and-list UI using JavaScript, HTML, CSS and Bootstrap: when users click on a
-            "help-wanted" posting, the map updates with a flag to show the location of the posting. The map
-            also updates with a warning flag for any traffic blockage reported by users.
-            <br /><br />
-            Best of all, <strong>We won third place in the hackathon! :)</strong>
-            <br /><br />
-            <a href="img/helpinghub1.png" data-featherlight="image">
-              <img  class="img-responsive" src="img/helpinghub1.png"/>
-            </a>
-          </p>
-        </div>
-
-        <div id="project-content" style="margin-top: 70px;">
-          <h3>John Green Quote Generator</h3>
-          <p>
-            Within one week of learning web development through freeCodeCamp, I created a
-            random quote generator which allow users to share the quotes on their Twitter.
-            The social media integration is done by using <strong>Twitter Web Intents</strong>,
-            which takes users directly to the Tweet page with the quotes populated.
-            <br />
-            <br />
-            <a href="img/quotegenerator1.png" data-featherlight="image">
-              <img  class="img-responsive" src="img/quotegenerator1.png"/>
-            </a>
-            <a href="img/quotegenerator2.png" data-featherlight="image">
-              <img  class="img-responsive" src="img/quotegenerator2.png"/>
-            </a>
-          </p>
-        </div>
+  <div id="resume">
+    <div class="row">
+      <h1>RESUMÉ</h1>
+      <img class="img-responsive" style="background-color: #fff; margin: auto;" src="files/nataliengan_resume.jpg"/>
+      <div style="text-align: center; margin-top: 10px;">
+      <a href="files/nataliengan_resume.pdf" class="btn btn-default" role="button">View Resumé PDF</a>
       </div>
     </div>
+  </div>
 
-    <div id="resume">
-      <div class="row">
-        <h1>RESUMÉ</h1>
-        <img class="img-responsive" style="background-color: #fff; margin: auto;" src="files/nataliengan_resume.jpg"/>
-        <div style="text-align: center; margin-top: 10px;">
-        <a href="files/nataliengan_resume.pdf" class="btn btn-default" role="button">View Resumé PDF</a>
-        </div>
-      </div>
-    </div>
-
-    <div id="contact" class="container-fluid">
-      <div class="row">
-        <div class="col-xs-12">
-          <h1>CONTACT</h1>
-          <div class="row">
-            <div class="contact-button">
-              <a class="btn btn-social-icon btn-google">
-                <span class="fa fa-google fa-5x"></span>
-                <br /><br />natalie.ngan.hy@gmail.com
-              </a>
-              </div>
-
-            <div class="contact-button">
-              <a href="https://github.com/nataliengan/" class="btn btn-social-icon btn-github">
-                <span class="fa fa-github fa-5x"></span>
-                <br /><br />www.github.com/nataliengan
-              </a>
+  <div id="contact" class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>CONTACT</h1>
+        <div class="row">
+          <div class="contact-button">
+            <a class="btn btn-social-icon btn-google">
+              <span class="fa fa-google fa-5x"></span>
+              <br /><br />natalie.ngan.hy@gmail.com
+            </a>
             </div>
 
-            <div class="contact-button">
-              <a href="http://www.linkedin.com/in/natalie-ngan/" class="btn btn-social-icon btn-linkedin">
-                <span class="fa fa-linkedin fa-5x"></span>
-                <br /><br />www.linkedin.com/in/natalie-ngan
-              </a>
-            </div>
+          <div class="contact-button">
+            <a href="https://github.com/nataliengan/" class="btn btn-social-icon btn-github">
+              <span class="fa fa-github fa-5x"></span>
+              <br /><br />www.github.com/nataliengan
+            </a>
+          </div>
+
+          <div class="contact-button">
+            <a href="http://www.linkedin.com/in/natalie-ngan/" class="btn btn-social-icon btn-linkedin">
+              <span class="fa fa-linkedin fa-5x"></span>
+              <br /><br />www.linkedin.com/in/natalie-ngan
+            </a>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
   <script src="lib/featherlight-docs/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 
@@ -382,6 +346,5 @@
     });
   });
   </script>
-
 </body>
 </html>
